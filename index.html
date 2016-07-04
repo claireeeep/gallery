@@ -1,0 +1,140 @@
+<html>
+<head>
+<link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" type="image/png" href="avatar.jpg" sizes="16x16">
+<link rel="icon" type="image/png" href="avatar.jpg" sizes="32x32">
+<link rel="icon" type="image/png" href="avatar.jpg" sizes="96x96">
+<style>
+body {
+padding:0;
+margin:0;
+}
+#container {
+	width:100%;
+	height:100%;
+	background: #f4f4f4;
+	}
+	.hidden{
+ opacity:0;   
+}
+img {
+display: block;
+max-height:100%;
+width:auto;
+margin:0 auto;
+    
+}
+.prev, .next {
+  cursor: pointer;
+  position: fixed;
+  top: 0;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  background-color: rgba(0,0,0,0.2);
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev {
+	left:0;
+	}
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+body {
+    padding:0;
+    margin:0;
+	font-family: 'Inconsolata';
+    }
+
+* {
+    box-sizing:border-box;
+    }
+	   header {
+	   z-index:1;
+   position:fixed;
+   height:30px;
+   width:100%;
+   color:white;
+   margin:0 auto;
+   padding:0;
+   text-align: center;
+   bottom:0;
+   }
+   header a {
+   text-decoration: none;
+   font-size:25px;
+   color: white;
+   line-height:20px;
+   margin:auto 0;
+   padding: 5px;
+   border: 0px solid black;
+   border-radius: 3px 3px 0 0;
+   text-align: center;
+   background-color: rgba(0,0,0,0.2);
+   }
+   header a:hover {
+   color: white;
+   background-color: rgba(0,0,0,0.8);}
+   p {
+   font-size:25px;
+   position:fixed;
+   top:0;
+   padding:0 5px;
+   margin:0px;
+   color:white;
+   border: 0px solid black;
+   border-radius:0 0px 3px 0;
+   background: rgba(0,0,0,0.2);
+   
+   }
+   p:hover {
+   background: rgba(0,0,0,0.8);
+   }
+</style>
+</head>
+
+<body>
+
+<script>
+var slideIndex = 0;
+var gallery = ["IMG_6939.JPG","IMG_6837.JPG","IMG_7149.JPG","IMG_6419.JPG","IMG_6424.JPG","IMG_6425.JPG","IMG_6426.JPG","IMG_6428.JPG","IMG_6442.JPG","IMG_6458.JPG","IMG_6472.JPG","IMG_6483.JPG","IMG_6739.JPG","IMG_6755.JPG","IMG_6755.JPG","IMG_6769.JPG","IMG_6778.JPG","IMG_6788.JPG","IMG_6799.JPG","IMG_6803.JPG","IMG_6016.JPG","IMG_6332.JPG","IMG_6333.JPG","IMG_6342.JPG"];
+var gallerySize = gallery.length;
+function showSlides(n) {
+    if (n >= gallery.length) {
+        slideIndex = 0;
+    }
+    if (n < 0) {
+        slideIndex = gallery.length - 1;
+    }
+    var x = document.getElementsByTagName("img");
+	x[0].src = "pictures/" + gallery[slideIndex];
+	var y = document.getElementsByTagName("p");
+	y[0].innerHTML = slideIndex+1 + "/" + gallerySize;
+}
+showSlides(slideIndex);
+function plusSlides(n) {
+    slideIndex += n;
+    showSlides(slideIndex);
+}
+
+</script>
+<div id="container">
+<img src="pictures/IMG_6016.JPG">
+</div>
+<header><a href="hpwslideshow.html">HOME</a></header>
+<p>1/24</p>
+<a class="prev" onclick="plusSlides(-1)"><</a>
+<a class="next" onclick="plusSlides(1)">></a>
+</body>
+</html>
